@@ -11,7 +11,7 @@ const App = () => {
     const [names, setnames] = useState([]);
     const handleInputChange = (value) => {
         setheaderExpanded(!value);
-        setnames(name(value));
+        setnames(value ? name(value) : []);
     };
     return (
         <div>
@@ -21,31 +21,5 @@ const App = () => {
         </div>
     );
 };
-
-// class App extends React.Component {
-//     state = {
-//         headerText: 'Nameit!',
-//         headerExpanded: true,
-//         names: [],
-//     };
-//     handleInputChange = (value) => {
-//         console.log(name(value));
-//         this.setState({ headerExpanded: !value, names: name(value) });
-//     };
-//     render() {
-//         return (
-//             <div>
-//                 <Header
-//                     headerTitle={this.state.headerText}
-//                     headerExpanded={this.state.headerExpanded}
-//                 />
-//                 <SearchBox onInputChange={this.handleInputChange} />
-//                 <ResultContainer nameresult={this.state.names} />
-//             </div>
-//         );
-//     }
-// }
-
-// function App() {}
 
 export default App;
